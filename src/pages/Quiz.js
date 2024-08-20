@@ -127,7 +127,6 @@ const Quiz = () => {
       }
 
       if (selectedOption === correctAnswer) {
-        console.log("hiii");
         const isOddQuestion = (currentQuestionIndex + 1) % 2 !== 0;
         const playerKey = isOddQuestion ? "player1" : "player2";
         setPlayerScores((prevScores) => {
@@ -147,7 +146,7 @@ const Quiz = () => {
       setTimeout(() => {
         setShowAlert(false);
         resolve(); // Resolve the promise after the alert timeout
-      }, 500);
+      }, 1000);
     });
   };
 
@@ -195,7 +194,7 @@ const Quiz = () => {
         <div>
           {showAlert && (
             <div
-              className={`relative top-0 left-0 right-0  mb-3 mx-auto max-w-md p-4 text-center rounded ${
+              className={`fixed top-16.5 left-0 right-0   mx-auto max-w-md p-4 text-center rounded ${
                 alertMessage === "Correct!" ? "bg-green-500" : "bg-red-500"
               } text-white`}
             >
