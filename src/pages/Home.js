@@ -12,6 +12,10 @@ const Home = () => {
 
   const handleStartGame = (e) => {
     e.preventDefault();
+    if (player1.trim() === "" || player2.trim() === "") {
+      alert("Please enter names for both players.");
+      return;
+    }
     const playerNames = {
       player1: player1,
       player2: player2,
